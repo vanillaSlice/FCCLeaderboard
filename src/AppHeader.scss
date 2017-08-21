@@ -1,0 +1,12 @@
+$primary-color: darkgreen;
+
+.App-Header {
+  &.Navbar {
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
+  
+  a {
+    display: flex;
+  }
+}
