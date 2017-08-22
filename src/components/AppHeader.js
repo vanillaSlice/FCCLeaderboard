@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './AppHeader.css';
+import '../styles/AppHeader.css';
 import { Navbar } from 'react-bootstrap';
-import logo from './freecodecamp_logo.svg';
+import logo from '../assets/freecodecamp_logo.svg';
 
 class AppHeader extends Component {
   render() {
