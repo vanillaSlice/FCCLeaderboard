@@ -1,3 +1,11 @@
-.highlight {
-  color: darkgreen;
+@import './_colours.scss';
+
+.LeaderboardHeader {
+  .highlight {
+    color: $primary-colour;
+  }
+  
+  .clickable {
+    cursor: pointer;
+  }
 }

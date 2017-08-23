@@ -4,14 +4,14 @@ import '../styles/LeaderboardHeader.css';
 class LeaderboardHeader extends Component {
   render() {
     return (
-      <thead>
+      <thead className='LeaderboardHeader'>
         <tr>
           <th>#</th>
           <th>Camper Name</th>
-          <th className={this.props.sortField === 'last30Days' ? 'highlight' : ''} onClick={() =>  
-            this.props.setSortField('last30Days')}>Points in last 30 days</th>
-          <th className={this.props.sortField === 'allTime' ? 'highlight' : ''} onClick={() =>  
-            this.props.setSortField('allTime')}>All time points</th>
+          <th className={this.props.sortField === 'top100Last30Days' ? 'highlight clickable' : 'clickable'} 
+            onClick={() => this.props.updateSortField('top100Last30Days')}>Points in last 30 days</th>
+          <th className={this.props.sortField === 'top100AllTime' ? 'highlight clickable' : 'clickable'}
+           onClick={() => this.props.updateSortField('top100AllTime')}>All time points</th>
         </tr>
       </thead>
     );

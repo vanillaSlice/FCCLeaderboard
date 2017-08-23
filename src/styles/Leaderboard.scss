@@ -10,4 +10,8 @@
     color: $secondary-colour;
     font-size: 18px;
   }
+
+  .table > tbody > tr > td {
+    vertical-align: middle;
+  }
 }
