@@ -13,6 +13,7 @@
     "gh-pages": "^1.1.0",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.2",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.2.0",
@@ -33,7 +34,7 @@
     "test:lint:js": "eslint --ext=js --ext=jsx ./src",
     "test:lint:css": "stylelint './src/**/*.scss'",
     "test:unit": "react-scripts test --env=jsdom",
-    "test": "run-s test:**",
+    "test": "run-s build-css test:**",
     "eject": "react-scripts eject"
   }
 }

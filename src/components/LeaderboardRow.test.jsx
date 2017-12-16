@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import LeaderboardRow from './LeaderboardRow';
 
 it('renders without crashing', () => {

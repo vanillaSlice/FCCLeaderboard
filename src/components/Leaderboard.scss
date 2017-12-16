@@ -1,13 +1,11 @@
-@import './_colours.scss';
-
 .Leaderboard {
   margin-top: 30px;
   margin-bottom: 15px;
 
   caption {
-    background-color: $primary-colour;
+    background-color: green;
     text-align: center;
-    color: $secondary-colour;
+    color: white;
     font-size: 18px;
   }
 
