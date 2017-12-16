@@ -6,19 +6,27 @@ import './LeaderboardHeader.css';
 const LeaderboardHeader = props => (
   <thead className="LeaderboardHeader">
     <tr>
-      <th>#</th>
-      <th>Camper Name</th>
+      <th className="position">#</th>
+      <th className="camper">Camper Name</th>
       <th
-        className={props.sortField === 'top100Last30Days' ? 'highlight clickable' : 'clickable'}
+        className={`recent clickable ${props.sortField === 'top100Last30Days' ? 'highlight' : ''}`}
         onClick={() => props.updateSortField('top100Last30Days')}
       >
-        Points in last 30 days
+        Points in last 30 days&nbsp;
+        {
+          props.sortField === 'top100Last30Days' &&
+          <span className="caret" />
+        }
       </th>
       <th
-        className={props.sortField === 'top100AllTime' ? 'highlight clickable' : 'clickable'}
+        className={`alltime clickable ${props.sortField === 'top100AllTime' ? 'highlight' : ''}`}
         onClick={() => props.updateSortField('top100AllTime')}
       >
-        All time points
+        All time points&nbsp;
+        {
+          props.sortField === 'top100AllTime' &&
+          <span className="caret" />
+        }
       </th>
     </tr>
   </thead>

@@ -6,7 +6,7 @@ import logo from './freecodecamp_logo.svg';
 import './AppHeader.css';
 
 export default () => (
-  <Navbar fixedTop className="AppHeader Navbar">
+  <Navbar staticTop className="AppHeader">
     <Navbar.Header>
       <Navbar.Brand>
         <a href="https://www.freecodecamp.org/">

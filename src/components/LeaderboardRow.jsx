@@ -5,10 +5,11 @@ import './LeaderboardRow.css';
 
 const LeaderboardRow = props => (
   <tr className="LeaderboardRow">
-    <td>{props.position}</td>
-    <td>
+    <td className="position">{props.position}</td>
+    <td className="camper">
       <a href={`https://www.freecodecamp.org/${props.camper.username}`}>
         <img
+          className="avatar"
           width="30"
           src={props.camper.img}
           alt={`${props.camper.username}'s avatar`}
@@ -17,8 +18,8 @@ const LeaderboardRow = props => (
         {props.camper.username}
       </a>
     </td>
-    <td>{props.camper.recent}</td>
-    <td>{props.camper.alltime}</td>
+    <td className="recent">{props.camper.recent}</td>
+    <td className="alltime">{props.camper.alltime}</td>
   </tr>
 );
 

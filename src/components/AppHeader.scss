@@ -1,10 +1,10 @@
 .AppHeader {
-  &.Navbar {
+  &.navbar {
     background-color: green;
     border-color: green;
-  }
   
-  a {
-    display: flex;
+    a {
+      display: flex;
+    }
   }
 }

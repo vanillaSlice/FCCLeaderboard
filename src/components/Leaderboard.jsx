@@ -34,7 +34,8 @@ class Leaderboard extends Component {
   }
 
   getCamperData() {
-    axios.all([getTop100Last30Days(), getTop100AllTime()])
+    axios
+      .all([getTop100Last30Days(), getTop100AllTime()])
       .then(axios.spread((last30Days, allTime) => {
         this.setState(prevState => ({
           top100Last30Days: [...last30Days.data],
@@ -56,9 +57,9 @@ class Leaderboard extends Component {
   render() {
     return (
       <Grid className="Leaderboard">
-        <Row className="show-grid">
+        <Row>
           <Col xs={12} md={10} mdOffset={1}>
-            <Table striped bordered condensed>
+            <Table striped bordered responsive>
               <caption>Leaderboard</caption>
               <LeaderboardHeader
                 sortField={this.state.sortField}
