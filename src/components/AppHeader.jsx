@@ -3,7 +3,7 @@ import { Navbar } from 'react-bootstrap';
 
 import logo from './freecodecamp_logo.svg';
 
-import './AppHeader.css';
+import './AppHeader.scss';
 
 export default () => (
   <Navbar staticTop className="AppHeader">
