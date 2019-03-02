@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Col, Grid, Row, Table } from 'react-bootstrap';
+import {
+  Col,
+  Grid,
+  Row,
+  Table,
+} from 'react-bootstrap';
 
 import LeaderboardHeader from './LeaderboardHeader';
 import LeaderboardRow from './LeaderboardRow';
 
-import './Leaderboard.css';
+import './Leaderboard.scss';
 
 function getTop100Last30Days() {
   return axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent');
@@ -55,6 +60,9 @@ class Leaderboard extends Component {
   }
 
   render() {
+    const { sortField } = this.state;
+    const { [sortField]: l } = this.state;
+
     return (
       <Grid className="Leaderboard">
         <Row>
@@ -62,12 +70,11 @@ class Leaderboard extends Component {
             <Table striped bordered responsive>
               <caption>Leaderboard</caption>
               <LeaderboardHeader
-                sortField={this.state.sortField}
+                sortField={sortField}
                 updateSortField={this.updateSortField}
               />
               <tbody>
-                {this.state[this.state.sortField].map((camper, i) =>
-                  <LeaderboardRow position={i + 1} key={camper.username} camper={camper} />)}
+                {l.map((c, i) => <LeaderboardRow position={i + 1} key={c.username} camper={c} />)}
               </tbody>
             </Table>
           </Col>

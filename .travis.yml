@@ -8,8 +8,8 @@ cache: npm
 script:
   - npm run test
   - if [[ $TRAVIS_BRANCH = 'master' && $TRAVIS_PULL_REQUEST = 'false' ]]; then npm run build; fi
-# after_script:
-  # - npm run coveralls
+after_script:
+  - npm run coveralls
 deploy:
   provider: pages
   skip_cleanup: true
