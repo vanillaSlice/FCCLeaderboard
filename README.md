@@ -1,27 +1,54 @@
 # FCC Leaderboard
 
-**Note: The API used to build the leaderboard is no longer available therefore nothing will be displayed.**
+[![Latest Release](https://img.shields.io/github/release/vanillaSlice/FCCLeaderboard.svg)](https://github.com/vanillaSlice/FCCLeaderboard/releases/latest)
+[![Build Status](https://img.shields.io/travis/com/vanillaSlice/FCCLeaderboard/master.svg)](https://travis-ci.com/vanillaSlice/FCCLeaderboard)
+[![Coverage Status](https://img.shields.io/coveralls/github/vanillaSlice/FCCLeaderboard/master.svg)](https://coveralls.io/github/vanillaSlice/FCCLeaderboard?branch=master)
+[![License](https://img.shields.io/github/license/vanillaSlice/FCCLeaderboard.svg)](LICENSE)
 
-A leaderboard built using React that displays [freeCodeCamp](https://www.freecodecamp.org) campers who've earned the most brownie points in the past 30 days. A working version can be viewed [here](https://vanillaslice.github.io/FCCLeaderboard/).
+A [FreeCodeCamp](https://www.freecodecamp.org/) leaderboard built using [React](https://reactjs.org/).
+A deployed version can be viewed [here](https://vanillaslice.github.io/FCCLeaderboard/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+## Screenshot
 
-## Installing dependencies
+![Screenshot](/images/screenshot-1.png)
+
+## Getting Started
+
+### Prerequisites
+
+* [npm](https://www.npmjs.com/)
+
+### Installing Dependencies
+
+From your terminal/command prompt run:
+
 ```
-yarn install
+npm install
 ```
 
-## Running locally
+### Running
+
+From your terminal/command prompt run:
+
 ```
-yarn start
+npm start
 ```
 
-## Run tests
-```
-yarn test
-```
+Point your browser to [localhost:3000](http://localhost:3000).
 
-## Deploy
-```
-yarn run deploy
-```
+## Technology Used
+
+For those of you that are interested, the technology used in this project includes:
+
+* [React](https://reactjs.org/)
+* [Jest](https://jestjs.io/) (Testing)
+
+## Useful Links
+
+Resources useful for the completion of this project:
+
+* [Create React App](https://github.com/facebook/create-react-app) (React starter kit)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
