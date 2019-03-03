@@ -55,6 +55,8 @@ describe('LeaderboardRow', () => {
   it('renders posters', () => {
     const postersElement = wrapper.find('.poster');
 
+    expect(posters.length).toBe(postersElement.length);
+
     posters.forEach((poster, index) => {
       const posterLink = postersElement.at(index);
       const posterImg = posterLink.find('img');
