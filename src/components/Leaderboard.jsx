@@ -6,32 +6,24 @@ import {
   Row,
   Table,
 } from 'reactstrap';
+import moment from 'moment';
 
 import LeaderboardHeader from './LeaderboardHeader';
 import LeaderboardRow from './LeaderboardRow';
 
-import './Leaderboard.scss';
-
-function getTop100Last30Days() {
-  return axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent');
-}
-
-function getTop100AllTime() {
-  return axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/alltime');
-}
+const FCC_LATEST_URL = 'https://cors-anywhere.herokuapp.com/https://www.freecodecamp.org/forum/latest.json';
 
 class Leaderboard extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      top100Last30Days: [],
-      top100AllTime: [],
-      sortField: 'top100AllTime',
+      topics: [],
+      users: [],
     };
 
     this.getCamperData = this.getCamperData.bind(this);
-    this.updateSortField = this.updateSortField.bind(this);
+    this.topicToRow = this.topicToRow.bind(this);
   }
 
   componentDidMount() {
@@ -39,43 +31,54 @@ class Leaderboard extends Component {
   }
 
   getCamperData() {
-    axios
-      .all([getTop100Last30Days(), getTop100AllTime()])
-      .then(axios.spread((last30Days, allTime) => {
-        this.setState(prevState => ({
-          top100Last30Days: [...last30Days.data],
-          top100AllTime: [...allTime.data],
-          sortField: prevState.sortField,
+    axios.get(FCC_LATEST_URL)
+      .then((res) => {
+        this.setState(() => ({
+          topics: res.data.topic_list.topics,
+          users: res.data.users,
         }));
-      }))
+      })
       .catch(error => window.console.error(error));
   }
 
-  updateSortField(sortField) {
-    this.setState(prevState => ({
-      top100Last30Days: prevState.top100Last30Days,
-      top100AllTime: prevState.top100AllTime,
-      sortField,
-    }));
+  topicToRow(topic, index) {
+    const posters = topic.posters.map((poster) => {
+      const { users } = this.state;
+      const user = users.find(u => u.id === poster.user_id);
+      return {
+        avatar: `https://www.freecodecamp.org${user.avatar_template}`.replace('{size}', '128'),
+        href: `https://www.freecodecamp.org/forum/u/${user.username}`,
+        id: user.id,
+        username: user.username,
+      };
+    });
+
+    return (
+      <LeaderboardRow
+        activity={moment(topic.last_posted_at).fromNow()}
+        key={index}
+        number={index + 1}
+        posters={posters}
+        replies={topic.posts_count - 1}
+        topic={{
+          title: topic.title,
+          href: `https://www.freecodecamp.org/forum/t/${topic.slug}/${topic.id}`,
+        }}
+        views={topic.views}
+      />
+    );
   }
 
   render() {
-    const { sortField } = this.state;
-    const { [sortField]: l } = this.state;
+    const { topics } = this.state;
 
     return (
-      <Container className="Leaderboard">
+      <Container className="Leaderboard mt-4 mb-2">
         <Row>
           <Col>
-            <Table striped bordered responsive>
-              <caption>Leaderboard</caption>
-              <LeaderboardHeader
-                sortField={sortField}
-                updateSortField={this.updateSortField}
-              />
-              <tbody>
-                {l.map((c, i) => <LeaderboardRow position={i + 1} key={c.username} camper={c} />)}
-              </tbody>
+            <Table bordered responsive striped>
+              <LeaderboardHeader />
+              <tbody>{topics.map((topic, index) => this.topicToRow(topic, index))}</tbody>
             </Table>
           </Col>
         </Row>

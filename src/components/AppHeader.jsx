@@ -5,7 +5,7 @@ import logo from './freecodecamp_logo.svg';
 
 import './AppHeader.scss';
 
-export default () => (
+const AppHeader = () => (
   <Navbar className="AppHeader">
     <Container>
       <NavbarBrand href="https://www.freecodecamp.org/">
@@ -14,3 +14,5 @@ export default () => (
     </Container>
   </Navbar>
 );
+
+export default AppHeader;
