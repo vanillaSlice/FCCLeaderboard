@@ -1,13 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { createElement } from 'react';
+import { render } from 'react-dom';
 
 import App from './components/App';
-import registerServiceWorker from './registerServiceWorker';
+import * as serviceWorker from './serviceWorker';
 
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 import './index.scss';
 
-ReactDOM.render(React.createElement(App), document.getElementById('root'));
+const AppElement = createElement(App);
+const rootElement = document.getElementById('root');
 
-registerServiceWorker();
+render(AppElement, rootElement);
+
+serviceWorker.register();

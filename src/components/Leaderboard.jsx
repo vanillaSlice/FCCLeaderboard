@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {
   Col,
-  Grid,
+  Container,
   Row,
   Table,
-} from 'react-bootstrap';
+} from 'reactstrap';
 
 import LeaderboardHeader from './LeaderboardHeader';
 import LeaderboardRow from './LeaderboardRow';
@@ -64,9 +64,9 @@ class Leaderboard extends Component {
     const { [sortField]: l } = this.state;
 
     return (
-      <Grid className="Leaderboard">
+      <Container className="Leaderboard">
         <Row>
-          <Col xs={12} md={10} mdOffset={1}>
+          <Col>
             <Table striped bordered responsive>
               <caption>Leaderboard</caption>
               <LeaderboardHeader
@@ -79,7 +79,7 @@ class Leaderboard extends Component {
             </Table>
           </Col>
         </Row>
-      </Grid>
+      </Container>
     );
   }
 }
