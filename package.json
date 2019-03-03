@@ -35,16 +35,17 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "axios-mock-adapter": "^1.16.0",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^4.3.1",
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.8.3",
-    "react-scripts": "^2.1.5"
+    "react-scripts": "^2.1.5",
+    "reactstrap": "^7.1.0"
   },
   "devDependencies": {
+    "axios-mock-adapter": "^1.16.0",
     "coveralls": "^3.0.3",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
