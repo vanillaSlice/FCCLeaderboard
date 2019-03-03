@@ -1,8 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import AppHeader from './AppHeader';
 
-it('renders without crashing', () => {
-  shallow(<AppHeader />);
+describe('AppHeader', () => {
+  it('renders', () => {
+    mount(<AppHeader />);
+  });
 });
