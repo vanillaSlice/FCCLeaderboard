@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/github/license/vanillaSlice/FCCLeaderboard.svg)](LICENSE)
 
 A [FreeCodeCamp](https://www.freecodecamp.org/) leaderboard built using [React](https://reactjs.org/).
-A deployed version can be viewed [here](https://vanillaslice.github.io/FCCLeaderboard/).
+A deployed version can be viewed [here](https://fccleaderboard.mikelowe.xyz/).
 
 ## Screenshot
 

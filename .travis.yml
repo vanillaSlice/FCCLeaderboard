@@ -3,7 +3,7 @@ branches:
   only:
     - master
 node_js:
-  - stable
+  - '11'
 cache: npm
 script:
   - npm run test
@@ -17,3 +17,4 @@ deploy:
   local_dir: build
   on:
     branch: master
+  fqdn: fccleaderboard.mikelowe.xyz
